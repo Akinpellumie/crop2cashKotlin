@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:paddingStart="6dp"
+        android:paddingEnd="16dp"
+        app:title="Exhibits"
+        android:clickable="true"
+        android:layout_alignParentTop="true"
+        app:titleTextColor="@color/white"
+        android:background="@color/colorPrimary"
+        app:contentInsetStartWithNavigation="0dp"
+        android:focusable="true"/>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:padding="10dp"
+        android:visibility="visible"
+        android:id="@+id/xhibitList"
+        android:layout_width="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar">
+
+            <!-- Recyclerview: shows items-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/exhibitsRecycler"
+                android:layout_marginTop="5sp"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:listitem="@layout/exhibit_card_view"
+                android:paddingBottom="20dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_marginBottom="30dp"
+                android:clipToPadding="true"/>
+            <!--                //you can place an overlay here=====-->
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <LinearLayout android:id="@+id/contentLoader"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_centerVertical="true"
+        android:foregroundGravity="center">
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/pbText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginTop="12dp"
+            android:text="Please wait ..."/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/emptyExhibit"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_medium"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:text="No Exhibit(s) found!!!"
+            android:textColor="@color/textColor"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+</RelativeLayout>

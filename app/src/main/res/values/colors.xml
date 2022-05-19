@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorSecondary">#343434</color>
+    <color name="colorPrimaryDark">#FBBF10</color>
+    <color name="colorSecondaryPlus">#90343434</color>
+    <color name="colorAccent">#DE8D2D</color>
+    <color name="colorAccentPlus">#90DE8D2D</color>
+    <color name="colorPrimary">#FFC314</color>
+    <color name="blackColor">#000000</color>
+    <color name="lineColor">#20454551</color>
+    <color name="borderColor">#E6EFFE</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="textColor">#454551</color>
+    <color name="colorPrimaryExtra">#FBBF10</color>
+    <color name="colorPlaceholder">#302C3A50</color>
+    <color name="listIconBgColor">#E6EFFE</color>
+</resources>
